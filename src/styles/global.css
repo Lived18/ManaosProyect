@@ -7,10 +7,17 @@
 }
 
 body {
-  font-family: 'Geologica', Arial, sans-serif;
+  font-family: "Geologica", sans-serif;
   font-weight: 300;
   background-color: #090909;
   color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#root {
+  width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;

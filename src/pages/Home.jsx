@@ -1,49 +1,25 @@
-import { useEffect, useState } from 'react'
-import { supabase } from '../supabase'
-import BurgerCard from '../components/BurgerCard'
+import { useNavigate } from 'react-router-dom'
 import '../styles/home.css'
 
 function Home() {
-  const [burgers, setBurgers] = useState([])
-  const [cargando, setCargando] = useState(true)
-
-  useEffect(() => {
-    async function cargarBurgers() {
-      const { data, error } = await supabase
-        .from('hamburguserias')
-        .select('*')
-        .eq('activo', true)
-
-      if (error) {
-        console.error('Error cargando hamburguserías:', error)
-      } else {
-        setBurgers(data)
-      }
-
-      setCargando(false)
-    }
-
-    cargarBurgers()
-  }, [])
-
-  if (cargando) {
-    return (
-      <main className="home-lista">
-        <p style={{ color: '#fff', textAlign: 'center' }}>Cargando...</p>
-      </main>
-    )
-  }
+  const navigate = useNavigate()
 
   return (
-    <main className="home-lista">
-      {burgers.map(burger => (
-        <BurgerCard
-          key={burger.id}
-          nombre={burger.nombre}
-          imagen={burger.imagen_url}
-          whatsapp={burger.whatsapp}
-        />
-      ))}
+    <main className="home-hero">
+      <div className="hero-contenido">
+        <button className="hero-img-btn" onClick={() => navigate('/hamburgueserias')}>
+          <img src="/icons/iconohambur.png" alt="Ver Hamburgueserías" />
+        </button>
+        <p className="hero-texto">VER HAMBURGUESERÍAS</p>
+        <div className="hero-redes">
+          <button className="btn-red" onClick={() => window.open('https://www.instagram.com/dondeloencuentro_tuc')}>
+            <img src="/icons/instagram.png" alt="Instagram" />
+          </button>
+          <button className="btn-red" onClick={() => window.open('https://www.tiktok.com/@dondeloencuentro')}>
+            <img src="/icons/tiktok.png" alt="TikTok" />
+          </button>
+        </div>
+      </div>
     </main>
   )
 }
