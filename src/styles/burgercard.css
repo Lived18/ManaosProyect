@@ -1,0 +1,51 @@
+.burger-card {
+  border: 2px solid #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: #090909;
+}
+
+.burger-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+}
+
+.burger-info {
+  padding: 14px 16px;
+  border-top: 2px solid #fff;
+}
+
+.burger-info h2 {
+  font-size: 1.2em;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #fff;
+}
+
+.burger-action {
+  padding: 14px 16px;
+  border-top: 2px solid #fff;
+}
+
+.burger-action button {
+  width: 100%;
+  background: #090909;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 8px;
+  padding: 12px 0;
+  font-size: 1em;
+  font-weight: 700;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.burger-action button:hover {
+  background-color: #fff;
+  color: #000;
+}
