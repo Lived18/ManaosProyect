@@ -1,35 +1,46 @@
+import { useEffect, useState } from 'react'
+import { supabase } from '../supabase'
 import BurgerCard from '../components/BurgerCard'
 import '../styles/home.css'
 
-const burgers = [
-  {
-    id: 1,
-    nombre: 'Burger House',
-    imagen: '/imagenes/promociones 1.png',
-    whatsapp: '5493816277158'
-  },
-  {
-    id: 2,
-    nombre: 'La Burger',
-    imagen: '/imagenes/promociones 2.jpeg',
-    whatsapp: '5493813359728'
-  },
-  {
-    id: 3,
-    nombre: 'Burger Bros',
-    imagen: '/imagenes/promociones 3.jpeg',
-    whatsapp: '5493813671917'
-  },
-]
-
 function Home() {
+  const [burgers, setBurgers] = useState([])
+  const [cargando, setCargando] = useState(true)
+
+  useEffect(() => {
+    async function cargarBurgers() {
+      const { data, error } = await supabase
+        .from('hamburguserias')
+        .select('*')
+        .eq('activo', true)
+
+      if (error) {
+        console.error('Error cargando hamburguserías:', error)
+      } else {
+        setBurgers(data)
+      }
+
+      setCargando(false)
+    }
+
+    cargarBurgers()
+  }, [])
+
+  if (cargando) {
+    return (
+      <main className="home-lista">
+        <p style={{ color: '#fff', textAlign: 'center' }}>Cargando...</p>
+      </main>
+    )
+  }
+
   return (
     <main className="home-lista">
       {burgers.map(burger => (
         <BurgerCard
           key={burger.id}
           nombre={burger.nombre}
-          imagen={burger.imagen}
+          imagen={burger.imagen_url}
           whatsapp={burger.whatsapp}
         />
       ))}
