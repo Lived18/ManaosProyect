@@ -1,5 +1,5 @@
 header {
-  background-color: #090909;
+  background-color: #000;
   color: #fff;
   padding: 0 10px;
   display: flex;
@@ -28,8 +28,8 @@ header {
 }
 
 .header-left button img {
-  height: 200px;
-  width: auto;
+  height: 250px;
+  width: 100%;
   object-fit: contain;
 }
 
@@ -39,12 +39,10 @@ header {
   display: flex;
   flex-direction: column;
   gap: 5px;
-  padding: 8px;
+  padding: 8px 12px;
   border: 2px solid #fff;
   border-radius: 8px;
   position: relative;
-  width: 44px;
-  height: 44px;
   justify-content: center;
   align-items: center;
 }

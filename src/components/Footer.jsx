@@ -8,7 +8,7 @@ function Footer() {
         <button onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLScQi7uQRVktxRlYtXYFfk8PAbUVUoTPVC_R9rKiSJU2g-0p_A/viewform')}>
           Contanos tu Opinión
         </button>
-        <button onClick={() => window.open('https://www.tiktok.com/@dondeloencuentro')}>
+        <button onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSdVfvzEZTrDfLBePvFMaaIzUtBsdshWhvagwYHzDNZ9cpwaIw/viewform?usp=dialog')}>
           Reportar Problema
         </button>
         <Link to="/contacto"><button>Contacto</button></Link>

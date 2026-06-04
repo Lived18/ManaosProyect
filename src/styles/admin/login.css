@@ -1,0 +1,130 @@
+.login-wrap {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #090909;
+  padding: 24px;
+}
+
+.login-card {
+  background: #111;
+  border: 1px solid #2a2a2a;
+  border-radius: 16px;
+  padding: 40px 32px;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.login-logo {
+  height: 200px;
+  object-fit: contain;
+}
+
+.login-card h1 {
+  font-size: 1.4em;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #fff;
+}
+
+.login-campo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+.login-campo label {
+  font-size: 0.8em;
+  color: #888;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.login-campo input {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 12px 14px;
+  color: #fff;
+  font-size: 1em;
+  width: 100%;
+  transition: border-color 0.2s;
+}
+
+.login-campo input:focus {
+  outline: none;
+  border-color: #fff;
+}
+
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.login-btn {
+  width: 100%;
+  background: #fff;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  padding: 14px;
+  font-size: 1em;
+  font-weight: 700;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  margin-top: 4px;
+}
+
+.login-btn:hover {
+  opacity: 0.85;
+}
+
+.login-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.login-recuperar {
+  background: none;
+  border: none;
+  color: #666;
+  font-size: 0.85em;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.login-recuperar:hover {
+  color: #aaa;
+}
+
+.login-error {
+  color: #ff6b6b;
+  font-size: 0.85em;
+  text-align: center;
+  background: #2a1515;
+  border: 1px solid #ff6b6b;
+  border-radius: 8px;
+  padding: 10px;
+  width: 100%;
+}
+
+.login-ok {
+  color: #6bffb8;
+  font-size: 0.85em;
+  text-align: center;
+  background: #152a1e;
+  border: 1px solid #6bffb8;
+  border-radius: 8px;
+  padding: 10px;
+  width: 100%;
+}
